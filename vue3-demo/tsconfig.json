@@ -8,8 +8,8 @@
       "path": "./tsconfig.app.json"
     }
   ],
-  "compilerOptions": {
+    "compilerOptions": {
     "noImplicitAny": false,
-    //其他配置项
+    // 其他配置项...
   }
 }
