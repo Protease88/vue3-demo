@@ -12,7 +12,13 @@ const routes = [
     path: '/test',
     name: 'test',
     component: () => import('../views/TestView.vue')
-  }
+  },
+  {
+    path: '/mainbox',
+    name: 'mainbox',
+    component: () => import('../views/MainBox.vue')
+  },
+
 ]
 
 //创建路由对象
