@@ -20,6 +20,10 @@
 
 <script lang="ts" setup>
 import { reactive} from 'vue'
+import {login} from '../../api/user'
+
+import { ElMessage } from 'element-plus'
+import {useRouter} from 'vue-router'
 
 //定义用户对象
 const user = reactive({
@@ -27,9 +31,25 @@ const user = reactive({
     password: ''
 })
 
-const submitForm = () => {
-   alert(user.username);
+const router = useRouter()
+
+const submitForm = async () => {
    //向后端发起请求
+    const resp=await login(user)
+    // console.log(resp)
+    if(resp.data.code==200){
+        ElMessage({
+            message:'用户登录成功',
+            type:'success'
+        })
+        router.push('/test')
+    }
+    else{
+        ElMessage({
+            message:'用户登录失败',
+            type:'error'
+        })
+    }
 }
 
 
