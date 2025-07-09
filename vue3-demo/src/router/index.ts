@@ -1,23 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+//引入路由
+import { createRouter, createWebHashHistory } from 'vue-router'
 
+//定义路由规则
+const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import('../views/TestView.vue')
+  }
+]
+
+//创建路由对象
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/LoginView.vue')
-    }
-  ]
+  history: createWebHashHistory(),
+  routes,
+  scrollBehavior: () => {
+    history.pushState(null, document.URL)
+  }
 })
 
 export default router

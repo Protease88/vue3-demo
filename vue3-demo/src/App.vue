@@ -1,6 +1,6 @@
 <template>
 
-<LoginView/>
+<RouterView/>
 
 
 </template>
