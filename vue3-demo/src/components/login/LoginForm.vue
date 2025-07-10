@@ -42,7 +42,7 @@ const submitForm = async () => {
             message:'用户登录成功',
             type:'success'
         })
-        router.push('/test')
+        router.push('/mainbox')
     }
     else{
         ElMessage({

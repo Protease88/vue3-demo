@@ -7,7 +7,9 @@
     <el-header>
       <Header></Header>
     </el-header>
-    <el-main>Main</el-main>
+    <el-main>
+      <RouterView/>
+    </el-main>
     <el-footer>
       <Footer></Footer>
     </el-footer>
@@ -26,7 +28,7 @@ import Aside from '../components/aside/Aside.vue';
 .el-container {
   width: 100vw;
   height: 100vh;
-  display: flex; /* 明确设置为flex布局 */
+  //display: flex; /* 明确设置为flex布局 */
 }
 
 .el-header, .el-footer {

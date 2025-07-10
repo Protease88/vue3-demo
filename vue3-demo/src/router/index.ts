@@ -16,7 +16,14 @@ const routes = [
   {
     path: '/mainbox',
     name: 'mainbox',
-    component: () => import('../views/MainBox.vue')
+    component: () => import('../views/MainBox.vue'),
+    children: [
+      {
+        // /mainbox/index
+        path: '/index',
+        component: () => import('../views/GeneralView.vue')
+      }
+    ]
   },
 
 ]

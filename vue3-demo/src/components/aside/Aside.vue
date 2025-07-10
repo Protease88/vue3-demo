@@ -1,6 +1,6 @@
 <template>
 
-      <h5 class="mb-2">光伏能源管理系统</h5>
+      <h3 class="mb-2">光伏能源管理系统</h3>
       <el-menu
         :default-active="route.fullpath"
         class="el-menu-vertical-demo"
