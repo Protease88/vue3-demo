@@ -11,3 +11,7 @@ interface loginDate {
 export function login(data: loginDate) {
   return request.post('/auth/login', data)
 }
+
+export function getMenu() {
+  return request.get('/system/menu/list')
+}
