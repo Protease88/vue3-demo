@@ -18,5 +18,8 @@ html, body {
   padding: 0;
   /* overflow: hidden; */
 }
-
+#app {
+    padding: 0 !important;
+    margin: 0 !important;
+}
 </style>

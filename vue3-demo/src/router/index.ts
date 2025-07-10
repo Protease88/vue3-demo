@@ -22,6 +22,10 @@ const routes = [
         // /mainbox/index
         path: '/index',
         component: () => import('../views/GeneralView.vue')
+      },
+      {
+        path: '/Photovoltaicequipment/DeviceType',
+        component: () => import('../views/Photovoltaicequipment/DeviceType.vue')
       }
     ]
   },
