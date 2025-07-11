@@ -136,13 +136,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import useLoading from '../../utils/loading'
 const { loading, setLoading } = useLoading(true)
 // import stopFlag from '../components/stop-flag/index.vue'
 import { listGroupAll } from '../../api/device'
 import { FormInstance } from 'element-plus'
 // import { FormInstance } from '@arco-design/web-vue/es/form'
+
+import { Modal } from '@arco-design/web-vue';
+
+
 //生成查询条件对象
 const generateSearchModel = () => {
   return {
@@ -158,21 +162,35 @@ const searchModel = ref(generateSearchModel())
  * 编辑数据
  * @param row 数据行
  */
-const handleUpdate = (record: any) => {
-  formDrawer.value.visible = true
-  formDrawer.value.formModel = { ...record }
+
+
+const handleUpdate = async (record: any) => {
+  formDrawer.value.visible = true;
+  formDrawer.value.formModel = { ...record };
+  
+  await nextTick();
+  Modal.success({
+    title: '提示',
+    content: '编辑数据'
+  });
 }
 
 /**
  * 删除数据
  * @param record 数据行
  */
-const handleDelete = (record: any) => {
+const handleDelete = async (record: any) => {
   operateModalModel.value.visible = true
   operateModalModel.value.id = record.id
   operateModalModel.value.title = '删除'
   operateModalModel.value.name = record.groupName
   operateModalModel.value.type = 1
+  
+  await nextTick();
+  Modal.success({
+    title: '提示',
+    content: '删除数据'
+  });
 }
 
 //设置表格列

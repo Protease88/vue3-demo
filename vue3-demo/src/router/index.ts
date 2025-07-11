@@ -26,7 +26,15 @@ const routes = [
       {
         path: '/Photovoltaicequipment/DeviceType',
         component: () => import('../views/Photovoltaicequipment/DeviceType.vue')
-      }
+      },
+      {
+        path: '/Photovoltaicequipment/Devicegrouping',
+        component: () => import('../views/Photovoltaicequipment/Devicegrouping.vue')
+      },
+      {
+        path: '/Photovoltaicequipment/DeviceList',
+        component: () => import('../views/Photovoltaicequipment/DeviceList.vue')
+      },
     ]
   },
 
